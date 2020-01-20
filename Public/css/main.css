@@ -1,0 +1,188 @@
+body{
+    font-size:14px;
+    font-family: Arial;
+    height: unset;
+    min-height: 100%;
+}
+
+.container{
+    flex-direction: column;
+    justify-content: flex-start;
+    background: #B3E629;
+    min-height: 700px;
+}
+
+nav{
+    width:960px;
+    height: 70px;
+    text-transform: uppercase;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+nav a{
+    text-decoration: none;
+    color:#fff;
+    font-size: 0.9em;
+}
+
+nav a:hover{
+    font-weight: bold;
+}
+
+nav > a{
+    width: 10%;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+nav > .navbar{
+    width: 80%;
+}
+
+nav > .navbar-icons{
+    width: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.navbar > ul,li{
+    margin:0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.navbar > ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.navbar-icons  i{
+    color:#fff;
+    font-size: 1.5em;
+}
+
+
+section{
+    width: 960px;
+    min-height: 70%;
+    color: #32400B;
+
+    padding: 2em 2em 2em 3em;
+
+    background: #fff;
+}
+
+section hr {
+    border-color: #C7FF2E;
+}
+
+.meal{
+
+}
+
+.meal > button {
+    background: #95BF22 0% 0% no-repeat padding-box;
+    border-radius: 0.5em;
+    border:none;
+    text-transform: uppercase;
+    color: #fff;
+    font: Bold 1em/2em Arial;
+    padding:0 2em;
+}
+
+.meal > table {
+    width:100%;
+}
+
+.meal > table td,th{
+    text-align: center;
+    padding: 0.1em;
+}
+
+.meal > table td:nth-child(n+2){
+    white-space: nowrap;
+}
+
+.meal > table td:first-child{
+    width: 50%;
+    text-align: left;
+    padding-left: 1em;
+}
+
+.meal > table th:first-child{
+    text-align: left;
+}
+
+.meal > table thead {
+    text-transform: uppercase;
+}
+
+@media only screen and (max-device-width: 992px) {
+    body{
+        font-size: 24px;
+    }
+
+    nav{
+        display: none;
+    }
+
+    section h3
+    {
+        text-align: center;
+        width: 100%;
+        padding: 1em 0.5em 0.7em 0.5em;
+        background: #B3E629;
+        margin: 0;
+        margin-bottom: 0.5em;
+    }
+
+
+}
+
+@media screen and (max-device-width: 600px) {
+    body{
+        font-size:48px;
+        width: 100%;
+        overflow-x:hidden;
+    }
+    nav{
+        display: none;
+    }
+    .container{
+        width: 100%;
+    }
+    .meal > table th:nth-child(n+2){
+        visibility: hidden;
+        font-size: 0;
+    }
+    .meal > table th:first-letter{
+        visibility: visible;
+        font-size: 48px ;
+    }
+
+    section{
+        position: absolute;
+        top:0;
+        left: 0;
+        width: 100%;
+        min-height: 100%;
+        padding: 0;
+    }
+
+    section h3
+    {
+        text-align: center;
+        width: 100%;
+        padding: 1em 0.5em 0.7em 0.5em;
+        background: #B3E629;
+        margin: 0;
+        margin-bottom: 0.5em;
+    }
+
+}

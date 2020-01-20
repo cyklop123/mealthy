@@ -1,0 +1,153 @@
+body{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    margin:0;
+    padding: 0;
+}
+
+.container{
+    margin:0;
+    max-width: unset;
+    height:inherit;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: transparent linear-gradient(90deg, #B3E629 0%, #95BF22 100%) 0% 0% no-repeat padding-box;
+}
+
+.logo{
+    color:#32400B;
+    width:50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.logo img{
+    width:30%
+}
+
+.logo-name{
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 600;
+    font-size: 1.5em;
+    margin-top:1em;
+}
+
+form{
+    width:20%;
+
+    font-family: Ubuntu, sans-serif;
+    color: #32400B;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2{
+    font-size: 1.5em;
+}
+
+form > input{
+    width: 100%;
+    height: 4em;
+
+    margin: 1em 0;
+    padding: 0 1em;
+
+    color:#32400B;
+    font-family:Arial;
+    font-size: 0.7em;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 0.1em solid #C7FF2E;
+    border-radius: 2em;
+}
+
+.links a{
+    text-decoration: none;
+    color: #32400B;
+    font-family: Ubuntu;
+    font-weight: bold;
+    font-size: 0.7em;
+}
+
+.links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+form > button{
+    width:100%;
+    height: 4em;
+
+    margin: 1em 0;
+    padding: 0em 1em;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size:0.7em;
+
+    background: #32400B 0% 0% no-repeat padding-box;
+    border:none;
+    border-radius: 2em;
+    color:#fff;
+
+    position: relative;
+}
+
+form > button[type="button"]{
+    background: none;
+    border: 2px solid #32400B;
+    color: #32400B;
+}
+
+i.fb{
+    color: #2699FB;
+    position: absolute;
+    left:1.5em;
+}
+
+form .divider{
+    background: #C7FF2E 0% 0% no-repeat padding-box;
+    border-radius: 1em;
+    width:1em;
+    height: 0.2em;
+
+    margin:1em 0 2em 0;
+}
+
+@media only screen and (max-device-width: 992px) {
+    body{
+        font-size: 24px;
+    }
+    .container{
+        flex-direction: column;
+    }
+    .logo{
+        width: 100%;
+    }
+    form{
+        width: 80%;
+    }
+}
+
+
+@media screen and (max-device-width: 600px) {
+    body{
+        font-size:48px;
+    }
+    .container{
+        flex-direction: column;
+    }
+    .logo{
+        width: 100%;
+    }
+    form{
+        width: 80%;
+    }
+}
