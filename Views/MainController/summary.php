@@ -13,166 +13,53 @@
     <div class="container">
         <?php include __DIR__.'/../Common/navbar.php' ?>
         <section>
-            <h3>Podsumowanie</h3>
-            <div class="meal">
+            <h3>
+                <span class="mobile left">
+                    <a href="?page=logout" style="color:#32400B"><i class="fas fa-sign-out-alt"></i></a>
+                </span>
+                Podsumowanie
+            </h3>
 
-                <table>
-                    <thead>
+            <?php
+            foreach ($eats as $meal_id=>$meal) {
+                ?>
+
+                <div class="meal">
+
+                    <table>
+                        <thead>
                         <tr>
-                            <th>śniadanie</th>
+                            <th><?= $meal['name'] ?></th>
                             <th>kaloryczność</th>
                             <th>białka</th>
                             <th>tłuszcze</th>
                             <th>węglowodany</th>
                         </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Bułka kajzerka</td>
-                            <td>156 kcal</td>
-                            <td>25.5 g</td>
-                            <td>35.7 g</td>
-                            <td>42.0 g</td>
-                        </tr>
-                        <tr>
-                            <td>Bułka adfadsfkajzerka</td>
-                            <td>155 kcal</td>
-                            <td>72 g</td>
-                            <td>55.7 g</td>
-                            <td>42 g</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <button>dodaj produkt</button>
-            </div>
-            <hr>
-            <div class="meal">
+                        </thead>
+                        <tbody>
+                        <?php
+                        foreach ($meal['products'] as $product) {
+                            ?>
+                            <tr>
+                                <td><?= $product->getName() ?></td>
+                                <td><?= $product->getCallories() ?> kcal</td>
+                                <td><?= $product->getProteins() ?> g</td>
+                                <td><?= $product->getFats() ?> g</td>
+                                <td><?= $product->getCarbs() ?> g</td>
+                            </tr>
+                            <?php
+                        }
+                        if(empty($product))
+                            echo "<td>Brak danych</td>";
+                        ?>
+                        </tbody>
+                    </table>
+                    <button name="<?= $meal_id ?>">wybierz produkt</button>
+                </div>
+                <?php
+            }
+            ?>
 
-                <table>
-                    <thead>
-                        <tr>
-                            <th>ii śniadanie</th>
-                            <th>kaloryczność</th>
-                            <th>białka</th>
-                            <th>tłuszcze</th>
-                            <th>węglowodany</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Bułka kajzerka</td>
-                            <td>156 kcal</td>
-                            <td>25.5 g</td>
-                            <td>35.7 g</td>
-                            <td>42.0 g</td>
-                        </tr>
-                        <tr>
-                            <td>Bułka adfadsfkajzerka</td>
-                            <td>155 kcal</td>
-                            <td>72 g</td>
-                            <td>55.7 g</td>
-                            <td>42 g</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <button>dodaj produkt</button>
-            </div>
-            <hr>
-            <div class="meal">
-
-                <table>
-                    <thead>
-                        <tr>
-                            <th>lunch</th>
-                            <th>kaloryczność</th>
-                            <th>białka</th>
-                            <th>tłuszcze</th>
-                            <th>węglowodany</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Bułka kajzerka</td>
-                            <td>156 kcal</td>
-                            <td>25.5 g</td>
-                            <td>35.7 g</td>
-                            <td>42.0 g</td>
-                        </tr>
-                        <tr>
-                            <td>Bułka adfadsfkajzerka</td>
-                            <td>155 kcal</td>
-                            <td>72 g</td>
-                            <td>55.7 g</td>
-                            <td>42 g</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <button>dodaj produkt</button>
-            </div>
-            <hr>
-            <div class="meal">
-
-                <table>
-                    <thead>
-                        <tr>
-                            <th>obiad</th>
-                            <th>kaloryczność</th>
-                            <th>białka</th>
-                            <th>tłuszcze</th>
-                            <th>węglowodany</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Bułka kajzerka</td>
-                            <td>156 kcal</td>
-                            <td>25.5 g</td>
-                            <td>35.7 g</td>
-                            <td>42.0 g</td>
-                        </tr>
-                        <tr>
-                            <td>Bułka adfadsfkajzerka</td>
-                            <td>155 kcal</td>
-                            <td>72 g</td>
-                            <td>55.7 g</td>
-                            <td>42 g</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <button>dodaj produkt</button>
-            </div>
-            <hr>
-            <div class="meal">
-
-                <table>
-                    <thead>
-                        <tr>
-                            <th>kolacja</th>
-                            <th>kaloryczność</th>
-                            <th>białka</th>
-                            <th>tłuszcze</th>
-                            <th>węglowodany</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Bułka kajzerka</td>
-                            <td>156 kcal</td>
-                            <td>25.5 g</td>
-                            <td>35.7 g</td>
-                            <td>42.0 g</td>
-                        </tr>
-                        <tr>
-                            <td>Bułka adfadsfkajzerka</td>
-                            <td>155 kcal</td>
-                            <td>72 g</td>
-                            <td>55.7 g</td>
-                            <td>42 g</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <button>dodaj produkt</button>
-            </div>
         </section>
     </div>
 </body>

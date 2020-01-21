@@ -14,14 +14,14 @@
         <img src="../../Public/img/logo.svg" title="mealthy-logo"/>
         <div class="logo-name">MEALTHY</div>
     </div>
-    <form method="post">
-        <span><?=$message ?></span>
+    <form method="post" action="?page=login">
         <h2>Logowanie</h2>
+        <span class="message"><?=$message ?></span>
         <input type="text" name="login" placeholder="user@example.com" autocomplete="off"/>
         <input type="password" name="password" placeholder="password"/>
         <div class="links">
-            <a href="#">Przypomnienie hasła</a>
-            <a href="#">Rejestracja</a>
+            <a href="?page=reminder">Przypomnienie hasła</a>
+            <a href="?page=register">Rejestracja</a>
         </div>
 
         <div class="divider"></div>

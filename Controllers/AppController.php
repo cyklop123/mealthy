@@ -7,6 +7,7 @@ class AppController
 
     public function __construct()
     {
+        session_start();
         $this->req_mthd = $_SERVER['REQUEST_METHOD'];
     }
 
@@ -20,13 +21,17 @@ class AppController
         return $this->req_mthd === 'GET';
     }
 
-    public function render(string $view=null, array $variables=[])
+    public function render(string $view=null, array $variables=[], string $controller=null)
     {
-        $dir = $view ? "Views/" . get_class($this) . "/" . $view . ".php" : "";
+        $controller = $controller ? $controller : get_class($this);
+
+        $dir = $view ? "Views/" . $controller . "/" . $view . ".php" : "";
         $out = "File not found";
 
         if(file_exists($dir))
         {
+            $message='';
+            $eats = [];
             extract($variables);
 
             ob_start();

@@ -121,6 +121,10 @@ form .divider{
     margin:1em 0 2em 0;
 }
 
+.message{
+    text-align: center;
+}
+
 @media only screen and (max-device-width: 992px) {
     body{
         font-size: 24px;

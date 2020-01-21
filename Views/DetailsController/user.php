@@ -13,14 +13,18 @@
 <div class="container">
     <?php include __DIR__.'/../Common/navbar.php' ?>
     <section>
-        <h3>Error 404</h3>
-        <h4>Nie znaleziono strony!</h4>
+        <h3>Panel użytkownika</h3>
+        <h4>Dane personalne</h4>
         <p>
-            Przepraszamy, ale żądana strona nie może zostać znaleziona.
+            Twoje aktualne dane personalne to: wiek - 22, wzrost - 171 cm<br>
+            <form method="post" action="?page=user">
+                WIEK<br>
+                <input type="text" name="age"><br>
+                WAGA<br>
+                <input type="text" name="weight"><br>
+            <button>zaktualizuj</button>
+            </form>
         </p>
-        <div style="text-align: center">
-            <img alt="ERROR_IMAGE" src="Public/img/404.svg" style="width:50%;">
-        </div>
     </section>
 </div>
 </body>

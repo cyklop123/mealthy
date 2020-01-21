@@ -123,6 +123,14 @@ section hr {
     text-transform: uppercase;
 }
 
+.mobile{
+    display: none;
+}
+
+.left{
+    float: left;
+}
+
 @media only screen and (max-device-width: 992px) {
     body{
         font-size: 24px;
@@ -141,7 +149,9 @@ section hr {
         margin: 0;
         margin-bottom: 0.5em;
     }
-
+    .mobile{
+        display: inline;
+    }
 
 }
 
@@ -183,6 +193,10 @@ section hr {
         background: #B3E629;
         margin: 0;
         margin-bottom: 0.5em;
+    }
+
+    .mobile{
+        display: inline;
     }
 
 }
