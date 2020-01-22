@@ -14,17 +14,31 @@
     <?php include __DIR__.'/../Common/navbar.php' ?>
     <section>
         <h3>Panel użytkownika</h3>
+        <h4>Dane użytkownika</h4>
+        <p>
+            Typ użytkownika: <?= $role?>
+        </p>
         <h4>Dane personalne</h4>
         <p>
-            Twoje aktualne dane personalne to: wiek - 22, wzrost - 171 cm<br>
+            Twoje aktualne dane personalne to: wiek - <?= $age ?>, wzrost - <?= $size ?> cm,  waga - <?= $weight ?> kg, a twoje bmi wynosi <?= $bmi ?>.
+        </p>
+        <div class="message"><?= $message ?></div>
+        <div class="user" action="?page=user">
             <form method="post" action="?page=user">
                 WIEK<br>
-                <input type="text" name="age"><br>
+                <input type="text" name="age" value="<?= $age ?>"><br>
+                WZROST<br>
+                <input type="text" name="size" value="<?= $size ?>"><br>
                 WAGA<br>
-                <input type="text" name="weight"><br>
+                <input type="text" name="weight" value="<?= $weight ?>"><br>
+                PŁEĆ
+                <div>
+                <input <?= !$male ? 'checked': '' ?> type="radio" name="male" value="0" id="kobieta" style="width: unset; height: unset"> <label for="kobieta" style="display: inline">Kobieta</label><br>
+                <input <?= $male ? 'checked': '' ?> type="radio" name="male" value="1" id="mezczyzna" style="width: unset; height: unset"> <label for="mezczyzna">Mężczyzna</label>
+                </div>
             <button>zaktualizuj</button>
             </form>
-        </p>
+        </div>
     </section>
 </div>
 </body>

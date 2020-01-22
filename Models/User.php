@@ -3,7 +3,7 @@
 
 class User
 {
-    private $login, $password, $role,$id;
+    protected $login, $password, $role,$id;
 
     public function __construct($login, $password, $id=0, $role=1)
     {

@@ -9,12 +9,23 @@ if(isset($_SESSION['id'])) {
                 <li>
                     <a href="?page=summary">podsumowanie</a>
                 </li>
+                <?php
+                if($_SESSION['role'] >= 2)
+                {
+                ?>
                 <li>
                     <a href="?page=add_product">dodawanie produktu</a>
                 </li>
-                <li>
-                    <a href="?page=admin">panel administratora</a>
-                </li>
+                <?php
+                }
+                if($_SESSION['role'] >= 3) {
+                    ?>
+                    <li>
+                        <a href="?page=admin">panel administratora</a>
+                    </li>
+                    <?php
+                }
+                ?>
                 <li>
                     <a href="?page=contact">kontakt</a>
                 </li>

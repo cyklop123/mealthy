@@ -1,7 +1,7 @@
 <?php
 
 
-class Product
+class Product implements JsonSerializable
 {
     private $name;
     private $quantity;
@@ -20,6 +20,19 @@ class Product
         $this->fats = $fats;
         $this->carbs = $carbs;
         $this->id = $id;
+    }
+
+    public function jsonSerialize()
+    {
+        return [
+            'name'=>$this->name,
+            'quantity'=>$this->quantity,
+            'callories'=>$this->callories,
+            'proteins'=>$this->proteins,
+            'fats'=>$this->fats,
+            'carbs'=>$this->carbs,
+            'id'=>$this->id,
+        ];
     }
 
     public function getName()
@@ -51,4 +64,7 @@ class Product
     {
         return $this->id;
     }
+
+
+
 }

@@ -6,6 +6,14 @@
    <link rel="stylesheet" href="../../Public/css/style.css">
     <link rel="stylesheet" href="../../Public/css/main.css">
 
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="Public/js/app.js"></script>
+    <script>
+        if ( window.history.replaceState ) {
+            window.history.replaceState( null, null, window.location.href );
+        }
+    </script>
+
     <meta charset="UTF-8">
     <title>Podsumowanie</title>
 </head>
@@ -19,8 +27,14 @@
                 </span>
                 Podsumowanie
             </h3>
-
+            <input type="date" id="datepick" value="<?= date('Y-m-d') ?>" max="<?= date('Y-m-d') ?>">
+            <div class=".message" style="padding:0.5em; font-weight: bold"><?= $message ?></div>
+            <div id="summary">
             <?php
+            $cal=0;
+            $prot=0;
+            $fat=0;
+            $carb=0;
             foreach ($eats as $meal_id=>$meal) {
                 ?>
 
@@ -39,9 +53,16 @@
                         <tbody>
                         <?php
                         foreach ($meal['products'] as $product) {
+                            $cal += $product->getCallories();
+                            $prot += $product->getProteins();
+                            $fat += $product->getFats();
+                            $carb += $product->getCarbs();
                             ?>
                             <tr>
-                                <td><?= $product->getName() ?></td>
+                                <td>
+                                    <i class="fas fa-trash" title="Usuń" value="<?= $product->getId() ?>"></i>
+                                    <?= $product->getName() ?>
+                                </td>
                                 <td><?= $product->getCallories() ?> kcal</td>
                                 <td><?= $product->getProteins() ?> g</td>
                                 <td><?= $product->getFats() ?> g</td>
@@ -49,17 +70,40 @@
                             </tr>
                             <?php
                         }
-                        if(empty($product))
+                        if(empty($meal['products']))
                             echo "<td>Brak danych</td>";
                         ?>
                         </tbody>
                     </table>
-                    <button name="<?= $meal_id ?>">wybierz produkt</button>
+                    <button name="choose_product" value="<?= $meal_id ?>">wybierz produkt</button>
                 </div>
+                <hr>
                 <?php
             }
             ?>
-
+            <div class="meal">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Podsumowanie</th>
+                        <th>kalorie</th>
+                        <th>białka</th>
+                        <th>tłuszcze</th>
+                        <th>węglowodany</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td></td>
+                        <td><?= $cal ?> kcal</td>
+                        <td><?= $prot ?> g</td>
+                        <td><?= $fat ?> g</td>
+                        <td><?= $carb ?> g</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            </div>
         </section>
     </div>
 </body>

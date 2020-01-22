@@ -86,7 +86,7 @@ section hr {
 
 }
 
-.meal > button {
+button {
     background: #95BF22 0% 0% no-repeat padding-box;
     border-radius: 0.5em;
     border:none;

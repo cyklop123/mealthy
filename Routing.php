@@ -37,6 +37,26 @@ class Routing
             "user"=>[
                 "controller"=>"DetailsController",
                 "action"=>"userDetails"
+            ],
+            "choose_product"=>[
+                "controller"=>"MainController",
+                "action"=>"chooseProduct"
+            ],
+            "products"=>[
+                "controller"=>"MainController",
+                "action"=>"getProducts"
+            ],
+            "delete_product"=>[
+                "controller"=>"MainController",
+                "action"=>"deleteProduct"
+            ],
+            "add_product"=>[
+                "controller"=>"MainController",
+                "action"=>"addProduct"
+            ],
+            "get_summary"=>[
+                "controller"=>"MainController",
+                "action"=>"getSummary"
             ]
         ];
     }

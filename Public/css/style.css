@@ -48,12 +48,17 @@ form{
     align-items: center;
 }
 
+.user > form{
+    width: 100%;
+    align-items: unset;
+}
+
 h2{
     font-size: 1.5em;
 }
 
-form > input{
-    width: 100%;
+form  input{
+    width: 90%;
     height: 4em;
 
     margin: 1em 0;
@@ -65,6 +70,31 @@ form > input{
     background: #FFFFFF 0% 0% no-repeat padding-box;
     border: 0.1em solid #C7FF2E;
     border-radius: 2em;
+}
+
+.user > form input{
+    border-radius: 0;
+}
+
+.search{
+    padding-left:4em;
+    background-image: url('../img/search-solid.svg');
+    background-position: 1em 1em;
+    background-repeat: no-repeat;
+    background-size: 2em;
+}
+.results input[type='radio']
+{
+    display: none;
+}
+
+.results label{
+    display: block;
+    padding:0.5em 2em;
+}
+
+.results input[type='radio']:checked+label{
+    background-color: #eee;
 }
 
 .links a{
@@ -121,9 +151,18 @@ form .divider{
     margin:1em 0 2em 0;
 }
 
+.user > form button{
+    width: 30%;
+}
+
 .message{
     text-align: center;
 }
+
+.fa-trash:hover{
+    cursor: pointer;
+}
+
 
 @media only screen and (max-device-width: 992px) {
     body{

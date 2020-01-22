@@ -32,6 +32,8 @@ class AppController
         {
             $message='';
             $eats = [];
+            $age = 0;
+            $size = 0;
             extract($variables);
 
             ob_start();
