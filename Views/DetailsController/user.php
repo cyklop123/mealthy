@@ -20,7 +20,7 @@
         </p>
         <h4>Dane personalne</h4>
         <p>
-            Twoje aktualne dane personalne to: wiek - <?= $age ?>, wzrost - <?= $size ?> cm,  waga - <?= $weight ?> kg, a twoje bmi wynosi <?= $bmi ?>.
+            Twoje aktualne dane personalne to: wiek - <?= $age ?>, wzrost - <?= $size ?> cm,  waga - <?= $weight ?> kg, a twoje bmi wynosi <?= $bmi ?> i oznacza <?= $bmi_cat ?>
         </p>
         <div class="message"><?= $message ?></div>
         <div class="user" action="?page=user">

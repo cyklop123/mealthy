@@ -65,6 +65,27 @@ class DetailsController extends AppController
 
         $bmi = round($userDetails->getWeight()/$userDetails->getSize()/$userDetails->getSize()*10000,2);
 
-        $this->render('user',['age'=>$userDetails->getAge(), 'size'=>$userDetails->getSize(), 'role'=>$rola, 'weight'=>$userDetails->getWeight(), 'male'=>$userDetails->getMale(), 'message'=>$message,'bmi'=>$bmi]);
+        $bmi_cat = $this->bmi_cat($bmi);
+
+        $this->render('user',['age'=>$userDetails->getAge(), 'size'=>$userDetails->getSize(), 'role'=>$rola, 'weight'=>$userDetails->getWeight(), 'male'=>$userDetails->getMale(), 'message'=>$message,'bmi'=>$bmi, 'bmi_cat'=>$bmi_cat]);
+    }
+
+    private function bmi_cat($bmi)
+    {
+        if($bmi < 16.0)
+            return "wygłodzenie";
+        if($bmi < 16.99)
+            return "wychudzenie";
+        if($bmi < 18.49)
+            return "niedowaga";
+        if($bmi < 24.99)
+            return "pożądana masa ciała";
+        if($bmi < 29.99)
+            return "nadwaga";
+        if($bmi < 34.99)
+            return "otyłość I stopnia";
+        if($bmi < 39.99)
+            return "otyłość II stopnia (duża)";
+        return "otyłość III stopnia (chorobliwa)";
     }
 }
